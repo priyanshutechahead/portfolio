@@ -1,14 +1,8 @@
-const VIEWS = ["about", "toolkit", "contact"];
+const SECTIONS = ["about", "toolkit", "contact"];
 
-const PAGE_TITLES = {
-  about: "About Me",
-  toolkit: "Toolkit",
-  contact: "Contact",
-};
-
-function setNavActive(view) {
+function setNavActive(sectionId) {
   document.querySelectorAll("[data-nav]").forEach((link) => {
-    const isActive = link.dataset.nav === view;
+    const isActive = link.dataset.nav === sectionId;
     link.classList.toggle("font-bold", isActive);
     link.classList.toggle("font-medium", !isActive);
     link.classList.toggle("!underline", isActive);
@@ -19,42 +13,27 @@ function setNavActive(view) {
   });
 }
 
-function showView(view) {
-  const target = VIEWS.includes(view) ? view : "about";
+function scrollToSection(id, { updateHash = true } = {}) {
+  if (!SECTIONS.includes(id)) return;
 
-  VIEWS.forEach((name) => {
-    const el = document.getElementById(`view-${name}`);
-    if (el) el.classList.toggle("hidden", name !== target);
-  });
-
-  setNavActive(target);
-  document.title = PAGE_TITLES[target] || "priy4zshu.";
-
-  const hash = target === "about" ? "" : `#${target}`;
-  if (location.hash !== hash) {
-    history.replaceState(null, "", hash || location.pathname);
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (updateHash) {
+      history.pushState(null, "", `#${id}`);
+    }
+    setNavActive(id);
   }
 
-  const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenu) mobileMenu.classList.add("hidden");
+  document.getElementById("mobileMenu")?.classList.add("hidden");
 }
 
-function initNavigation() {
-  const fromHash = location.hash.replace("#", "");
-  showView(fromHash || "about");
-
-  document.querySelectorAll("[data-nav]").forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      showView(link.dataset.nav);
-    });
+document.querySelectorAll("[data-nav]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToSection(link.dataset.nav);
   });
-
-  window.addEventListener("hashchange", () => {
-    const view = location.hash.replace("#", "") || "about";
-    showView(view);
-  });
-}
+});
 
 const menuBtn = document.getElementById("menuBtn");
 if (menuBtn) {
@@ -63,4 +42,31 @@ if (menuBtn) {
   });
 }
 
-initNavigation();
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((e) => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible?.target?.id) {
+      setNavActive(visible.target.id);
+    }
+  },
+  { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5] }
+);
+
+SECTIONS.forEach((id) => {
+  const section = document.getElementById(id);
+  if (section) observer.observe(section);
+});
+
+const initialHash = location.hash.replace("#", "");
+if (SECTIONS.includes(initialHash)) {
+  requestAnimationFrame(() => scrollToSection(initialHash, { updateHash: false }));
+} else {
+  setNavActive("about");
+}
+
+window.addEventListener("hashchange", () => {
+  const id = location.hash.replace("#", "");
+  if (SECTIONS.includes(id)) scrollToSection(id, { updateHash: false });
+});

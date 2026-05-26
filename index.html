@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="utf-8"/>
 <link rel="icon" href="../icon.png" type="image/png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About Me</title>
+<title>priy4zshu.</title>
 <script src="js/theme-init.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
 <script src="js/tailwind-config.js"></script>
@@ -25,8 +25,8 @@
     a {
       @apply text-black dark:text-white decoration-1 underline-offset-4 decoration-transparent hover:decoration-black dark:decoration-white dark:hover:decoration-white transition-all;
     }
-    #view-contact input,
-    #view-contact textarea {
+    #contact input,
+    #contact textarea {
       @apply border-0 border-b border-black/20 dark:border-white/20 focus:border-black dark:focus:border-white focus:ring-0 px-0 !bg-transparent transition-colors placeholder:text-black/30 dark:placeholder:text-white/30 text-black dark:text-white;
     }
   }
@@ -39,30 +39,28 @@
 <header class="w-full fixed top-0 bg-white dark:bg-black z-50 border-b border-black/10 dark:border-white/10">
   <div class="w-full flex items-center justify-between px-6 lg:px-12 py-6">
     <div class="flex items-center gap-3">
-      <a class="text-3xl font-serif font-bold tracking-tighter text-black dark:text-white no-underline" href="#" data-nav="about">priy4zshu.</a>
+      <a class="text-3xl font-serif font-bold tracking-tighter text-black dark:text-white no-underline" href="#about">priy4zshu.</a>
     </div>
     <nav class="hidden md:flex items-center gap-12 ml-auto">
-      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="about">About</a>
-      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="/blog">Blog</a>
-      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="toolkit">Toolkit</a>
-      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="contact">Contact</a>
+      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#about" data-nav="about">About</a>
+      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#toolkit" data-nav="toolkit">Toolkit</a>
+      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#contact" data-nav="contact">Contact</a>
     </nav>
     <button id="menuBtn" type="button" class="md:hidden p-2 text-black dark:text-white ml-auto" aria-label="Open menu">
       <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
   <nav id="mobileMenu" class="hidden md:hidden flex-col border-t border-black/10 dark:border-white/10 bg-white dark:bg-black px-6 py-6 space-y-4">
-    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="about">About</a>
-    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="/blog">Blog</a>
-    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="toolkit">Toolkit</a>
-    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#" data-nav="contact">Contact</a>
+    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#about" data-nav="about">About</a>
+    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#toolkit" data-nav="toolkit">Toolkit</a>
+    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#contact" data-nav="contact">Contact</a>
   </nav>
 </header>
 
 <main class="flex-1 w-full pt-32 lg:pt-40">
 
 <!-- ABOUT -->
-<section id="view-about" class="page-view w-full px-6 lg:px-12 pb-20">
+<section id="about" class="scroll-mt-32 lg:scroll-mt-40 w-full px-6 lg:px-12 pb-20">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
     <div class="lg:col-span-4 relative">
       <h1 class="text-7xl md:text-8xl lg:text-9xl font-serif tracking-tighter leading-none">About<br/>Me.</h1>
@@ -206,7 +204,7 @@
 </section>
 
 <!-- TOOLKIT -->
-<section id="view-toolkit" class="page-view hidden w-full px-6 lg:px-20 pb-12 md:px-12 min-h-screen">
+<section id="toolkit" class="scroll-mt-32 lg:scroll-mt-40 w-full px-6 md:px-12 lg:px-20 pb-20 pt-24 lg:pt-32 border-t border-black dark:border-white">
   <div class="mb-20 grid grid-cols-1 md:grid-cols-12 gap-8 border-b border-border-light dark:border-border-dark pb-12">
     <div class="md:col-span-4 lg:col-span-3">
       <h1 class="font-display font-serif text-5xl md:text-6xl lg:text-7xl leading-tight">Toolkit</h1>
@@ -253,7 +251,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="view-contact" class="page-view hidden w-full px-6 lg:px-10 pb-10 flex flex-col justify-start">
+<section id="contact" class="scroll-mt-32 lg:scroll-mt-40 w-full px-6 lg:px-10 pb-24 pt-24 lg:pt-32 border-t border-black dark:border-white flex flex-col justify-start">
   <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
     <div class="lg:sticky lg:top-32">
       <h1 class="text-5xl md:text-7xl lg:text-[8rem] font-serif font-normal tracking-tighter leading-[0.9] lg:-ml-2">Get<br/> in Touch</h1>
@@ -296,7 +294,7 @@
 <footer class="border-t border-black dark:border-white py-10 bg-white dark:bg-black mt-auto">
   <div class="w-full px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
     <div>
-      <a class="text-lg font-serif font-bold tracking-tight no-underline" href="#" data-nav="about">priy4zshu.</a>
+      <a class="text-lg font-serif font-bold tracking-tight no-underline" href="#about">priy4zshu.</a>
     </div>
     <div class="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-widest font-medium">
       <a class="text-black dark:text-white hover:opacity-50 transition-opacity no-underline" href="https://x.com/priyanshupyr">Twitter</a>
