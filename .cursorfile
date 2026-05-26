@@ -1,0 +1,53 @@
+# Portfolio — Project Context
+
+Single-page static site merging About, Toolkit, and Contact. All UI lives in one HTML shell; behavior and styles are split by concern.
+
+## Directory structure
+
+```
+portfolio/
+├── .cursorfile           # This file — project rules & layout
+├── index.html            # Shell: head, header, footer, three view sections
+├── songs.txt             # Spotify embed URLs (one per line) for shuffle player
+├── css/
+│   └── style.css         # Custom CSS (scrollbar, toolkit logo hovers, form extras)
+└── js/
+    ├── theme-init.js     # Sync in <head> — apply saved theme before paint
+    ├── tailwind-config.js
+    ├── navigation.js     # SPA views + mobile menu + nav active state
+    ├── theme.js          # Theme toggle button
+    ├── spotify.js        # Spotify iframe shuffle
+    └── contact.js        # Web3Forms contact submission
+```
+
+## Views (client-side routing)
+
+| View     | Hash        | Source (legacy)   |
+|----------|-------------|-------------------|
+| About    | `#` / empty | `../index.html`   |
+| Toolkit  | `#toolkit`  | `../toolkit.html` |
+| Contact  | `#contact`  | `../contact.html` |
+
+Navigation uses `data-nav="about|toolkit|contact"` on header links — do not use separate HTML files for these sections.
+
+## Conventions
+
+- **Tailwind**: CDN with `forms`, `container-queries`, `typography`. Config in `js/tailwind-config.js`. Base `@layer` rules stay in `index.html` as `<style type="text/tailwindcss">` (Tailwind must process them).
+- **No inline scripts** in `index.html` except AdSense if required — use `js/*.js`.
+- **Paths**: Always relative to `portfolio/` (`css/`, `js/`, `songs.txt`).
+- **Theme**: `localStorage.theme` = `light` | `dark`. Init in `theme-init.js`, toggle in `theme.js`.
+- **Blog**: External link only (`/blog`) — not part of this SPA.
+- **Semantic HTML**: `<header>`, `<main>`, `<footer>`, `<section>` per view.
+- **Minimal diffs**: When editing one view, touch only its section in `index.html` plus shared assets if needed.
+
+## Adding a new view
+
+1. Add `<section id="view-{name}" class="page-view hidden">` in `index.html`.
+2. Register `{name}` in `VIEWS` array in `js/navigation.js`.
+3. Add nav link with `data-nav="{name}"` in header (desktop + mobile).
+
+## External dependencies
+
+- Tailwind CDN, Google Fonts (Inter, Lora, Playfair Display, JetBrains Mono), Material Symbols
+- Web3Forms API (`contact.js`)
+- Spotify embed iframes (`songs.txt`)

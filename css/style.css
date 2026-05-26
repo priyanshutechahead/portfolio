@@ -1,0 +1,83 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.logo-icon {
+  transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.group:hover .logo-notebooklm {
+  color: #4285f4;
+  fill: #4285f4;
+}
+
+.group:hover .logo-stitch {
+  color: #fcd116;
+  fill: #fcd116;
+}
+
+.group:hover .logo-github {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.dark .group:hover .logo-github {
+  color: #181717;
+  fill: #181717;
+}
+
+.group:hover .logo-figma {
+  color: #f24e1e;
+  fill: #f24e1e;
+}
+
+.group:hover .logo-opal {
+  color: #5b48e8;
+  fill: #5b48e8;
+}
+
+.group:hover .logo-gemini {
+  color: #4e86f6;
+  fill: #4e86f6;
+}
+
+.group:hover .logo-python {
+  color: #3776ab;
+  fill: #3776ab;
+}
+
+.group:hover .logo-vscode {
+  color: #007acc;
+  fill: #007acc;
+}
+
+#spotify-player {
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.contact-message {
+  max-height: 12em;
+  overflow-y: auto;
+}
