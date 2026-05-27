@@ -1,4 +1,4 @@
-const SECTIONS = ["about", "toolkit", "contact"];
+const SECTIONS = ["about", "toolkit", "projects", "contact"];
 
 function setNavActive(sectionId) {
   document.querySelectorAll("[data-nav]").forEach((link) => {
