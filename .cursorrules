@@ -1,9 +1,0 @@
-- what is this project — first thing Cursor reads. sets the context in 3 lines so the AI doesn't assume you have a backend or a framework.
-"the four sections" — the #about, #toolkit, #projects, #contact IDs are the most fragile part of the codebase. navigation.js, scroll-spy, and anchor links all depend on them. if an AI renames one, everything breaks. so it's the first rule.
-"the file structure" — drawn out clearly so Cursor knows where things belong and doesn't create random new files.
-"the look and feel" — this is the most important section for design decisions. i read your actual code — the invert hover effect, the monochrome palette, the three fonts — and wrote it in plain English so Cursor can't accidentally add a gradient or border-radius.
-"what's allowed vs not" — the hard no list. no React, no npm, no inline styles. written as a simple two-column mental model.
-"the JS files explained" — Cursor often merges files or moves things around "helpfully." explaining why the split exists (especially why theme-init.js must stay in <head>) prevents that.
-"what you can do vs must ask" — gives Cursor a decision framework so it doesn't ask you 10 questions for a simple bug fix, but also doesn't add a blog section without warning you.
-step-by-step guides for adding tools and projects — written exactly how your existing code is structured, so the output matches perfectly.
-"things that will break the site" — the danger list. specific, concrete, with the reason why each one breaks things.
