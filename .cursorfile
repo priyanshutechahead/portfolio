@@ -8,7 +8,7 @@ Single **landing page**: About, Toolkit, and Contact are stacked sections on one
 portfolio/
 ├── .cursorfile           # This file — project rules & layout
 ├── index.html            # Landing page: header + 3 sections + footer
-├── songs.txt             # Spotify embed URLs (one per line) for shuffle player
+├── prd.md                # product requirement document
 ├── css/
 │   └── style.css         # Custom CSS (scrollbar, toolkit logo hovers, form extras)
 └── js/
@@ -16,7 +16,6 @@ portfolio/
     ├── tailwind-config.js
     ├── navigation.js     # Smooth scroll, mobile menu, scroll-spy nav highlight
     ├── theme.js          # Theme toggle button
-    ├── spotify.js        # Spotify iframe shuffle
     └── contact.js        # Web3Forms contact submission
 ```
 
@@ -34,7 +33,7 @@ Use `scroll-mt-32 lg:scroll-mt-40` on sections so content clears the fixed heade
 
 - **Tailwind**: CDN with `forms`, `container-queries`, `typography`. Config in `js/tailwind-config.js`. Base `@layer` rules stay in `index.html` as `<style type="text/tailwindcss">`.
 - **No inline scripts** in `index.html` except AdSense if required — use `js/*.js`.
-- **Paths**: Always relative to `portfolio/` (`css/`, `js/`, `songs.txt`).
+- **Paths**: Always relative to `portfolio/` (`css/`, `js/`).
 - **Theme**: `localStorage.theme` = `light` | `dark`. Init in `theme-init.js`, toggle in `theme.js`.
 - **Do not** hide sections with JS — this is one page, not tab routing.
 
@@ -48,4 +47,3 @@ Use `scroll-mt-32 lg:scroll-mt-40` on sections so content clears the fixed heade
 
 - Tailwind CDN, Google Fonts (Inter, Lora, Playfair Display, JetBrains Mono), Material Symbols
 - Web3Forms API (`contact.js`)
-- Spotify embed iframes (`songs.txt`)

@@ -72,11 +72,6 @@
   fill: #007acc;
 }
 
-#spotify-player {
-  border-radius: 12px;
-  transition: opacity 0.3s ease;
-}
-
 .contact-message {
   max-height: 12em;
   overflow-y: auto;
