@@ -1,16 +1,16 @@
 # Portfolio — Project Context
 
-Single **landing page**: About, Toolkit, and Contact are stacked sections on one scrollable `index.html`. Nav links smooth-scroll to `#about`, `#toolkit`, `#contact`.
+Single **landing page**: About, Toolkit, Projects, and Contact are stacked sections on one scrollable `index.html`. Nav links smooth-scroll to `#about`, `#toolkit`, `#projects`, `#contact`.
 
 ## Directory structure
 
 ```
 portfolio/
 ├── .cursorfile           # This file — project rules & layout
-├── index.html            # Landing page: header + 3 sections + footer
-├── prd.md                # product requirement document
+├── index.html            # Landing page: header + 4 sections + footer
+├── prd.md                # Product requirements document
 ├── css/
-│   └── style.css         # Custom CSS (scrollbar, toolkit logo hovers, form extras)
+│   └── style.css         # Custom CSS (scrollbar, toolkit hovers, projects rail, form)
 └── js/
     ├── theme-init.js     # Sync in <head> — apply saved theme before paint
     ├── tailwind-config.js
@@ -21,6 +21,7 @@ portfolio/
 
 ## Sections (all visible)
 
+
 | Section  | ID        | Anchor     |
 |----------|-----------|------------|
 | About    | `#about`  | Top hero   |
@@ -29,6 +30,12 @@ portfolio/
 | Contact  | `#contact`| Before footer |
 
 Use `scroll-mt-32 lg:scroll-mt-40` on sections so content clears the fixed header.
+
+## Projects section
+
+- Horizontal rail: `.projects-rail` with toolkit-style `.project-card` articles
+- Scroll: native `overflow-x-auto` + scroll-snap (no JS carousel in v1)
+- Cards: display-only (title, description, tech tags); no links unless added later
 
 ## Conventions
 
