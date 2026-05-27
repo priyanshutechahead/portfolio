@@ -76,3 +76,34 @@
   max-height: 12em;
   overflow-y: auto;
 }
+
+.projects-rail {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-left: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.dark .projects-rail {
+  border-left-color: #333333;
+  border-top-color: #333333;
+}
+
+.projects-rail .project-card {
+  flex: 0 0 min(85vw, 320px);
+  scroll-snap-align: start;
+}
+
+.project-tags {
+  margin-top: 0.75rem;
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-rail {
+    scroll-snap-type: none;
+  }
+}
