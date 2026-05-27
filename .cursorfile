@@ -25,6 +25,7 @@ portfolio/
 |----------|-----------|------------|
 | About    | `#about`  | Top hero   |
 | Toolkit  | `#toolkit`| After About|
+| Project  | `#project`| after toolkit and before contact|
 | Contact  | `#contact`| Before footer |
 
 Use `scroll-mt-32 lg:scroll-mt-40` on sections so content clears the fixed header.
