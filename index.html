@@ -44,6 +44,7 @@
     <nav class="hidden md:flex items-center gap-12 ml-auto">
       <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#about" data-nav="about">About</a>
       <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#toolkit" data-nav="toolkit">Toolkit</a>
+      <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#projects" data-nav="projects">Projects</a>
       <a class="text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#contact" data-nav="contact">Contact</a>
     </nav>
     <button id="menuBtn" type="button" class="md:hidden p-2 text-black dark:text-white ml-auto" aria-label="Open menu">
@@ -53,6 +54,7 @@
   <nav id="mobileMenu" class="hidden md:hidden flex-col border-t border-black/10 dark:border-white/10 bg-white dark:bg-black px-6 py-6 space-y-4">
     <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#about" data-nav="about">About</a>
     <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#toolkit" data-nav="toolkit">Toolkit</a>
+    <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#projects" data-nav="projects">Projects</a>
     <a class="block text-xs font-medium uppercase tracking-widest no-underline hover:opacity-50 transition-opacity" href="#contact" data-nav="contact">Contact</a>
   </nav>
 </header>
@@ -237,6 +239,86 @@
       <div class="flex justify-between items-start"><span class="font-mono text-xs opacity-50">08</span><div class="h-8 w-8 text-current logo-icon logo-vscode"><svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M18.8 1.4L16.2 3.6L18.3 5.4L22.6 3.6L18.8 1.4ZM2.8 18.2L16.5 23L23 17.5L23 6.5L16.5 1L2.8 5.8C2.5 5.9 2.3 6.2 2.3 6.5V17.5C2.3 17.8 2.5 18.1 2.8 18.2ZM17.5 19.8L5.3 15.6V8.4L17.5 4.2V19.8ZM16.2 20.4L18.8 22.6L22.6 20.4L18.3 18.6L16.2 20.4ZM6.5 11.2V12.8L10.5 14L11.5 12L10.5 10L6.5 11.2Z"/></svg></div></div>
       <div><h3 class="font-display font-bold text-2xl mb-2">VS Code</h3><p class="text-sm opacity-80 font-light leading-relaxed">Highly extensible code editor with integrated terminal and Git.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="scroll-mt-32 lg:scroll-mt-40 w-full px-6 md:px-12 lg:px-20 pb-20 pt-24 lg:pt-32 border-t border-black dark:border-white">
+  <div class="mb-20 grid grid-cols-1 md:grid-cols-12 gap-8 border-b border-border-light dark:border-border-dark pb-12">
+    <div class="md:col-span-4 lg:col-span-3">
+      <h1 class="font-display font-serif text-5xl md:text-6xl lg:text-7xl leading-tight">Projects</h1>
+    </div>
+    <div class="md:col-span-8 lg:col-span-6 flex flex-col justify-end pb-2">
+      <p class="text-lg md:text-xl font-light leading-relaxed text-gray-800 dark:text-gray-300">things i have built, am building, and learned from along the way.</p>
+    </div>
+  </div>
+  <div class="projects-rail border-border-light dark:border-border-dark" tabindex="0" aria-label="Projects">
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">01</span>
+        <span class="font-mono text-xs opacity-50">2025</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">Personal Finance Management System</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">End-to-end finance app from requirements to release — auth, budgeting, expense tracking, and reporting.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">Python · SQLite · Agile</p>
+      </div>
+    </article>
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">02</span>
+        <span class="font-mono text-xs opacity-50">2025</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">AI Hostel Management</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">Smart hostel operations — room allocation, student records, and AI-assisted admin workflows.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">Python · AI · Full-stack</p>
+      </div>
+    </article>
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">03</span>
+        <span class="font-mono text-xs opacity-50">2025</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">AI Legal Document Analyzer</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">RAG pipeline to ingest legal docs, retrieve context, and answer questions with cited sources.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">RAG · LLM · Python</p>
+      </div>
+    </article>
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">04</span>
+        <span class="font-mono text-xs opacity-50">2025</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">Calories Burnt Prediction</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">ML model predicting calories burned from activity inputs — training, evaluation, and inference.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">Python · ML · Scikit-learn</p>
+      </div>
+    </article>
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">05</span>
+        <span class="font-mono text-xs opacity-50">WIP</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">Retro Chat App</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">A retro chat experience inspired by the 1980s — built for slow conversations and late replies.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">In progress</p>
+      </div>
+    </article>
+    <article class="project-card group relative p-8 border-r border-b border-border-light dark:border-border-dark hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors duration-300 flex flex-col h-64 justify-between">
+      <div class="flex justify-between items-start">
+        <span class="font-mono text-xs opacity-50">06</span>
+        <span class="font-mono text-xs opacity-50">2026</span>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl mb-2 group-hover:text-white dark:group-hover:text-black">priy4zshu. Portfolio</h3>
+        <p class="text-sm opacity-80 font-light leading-relaxed group-hover:text-white dark:group-hover:text-black group-hover:opacity-90">This site — single landing page with about, toolkit, projects, and contact in one scroll.</p>
+        <p class="project-tags font-mono text-xs group-hover:text-white dark:group-hover:text-black">HTML · Tailwind · Vanilla JS</p>
+      </div>
+    </article>
   </div>
 </section>
 
