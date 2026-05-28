@@ -77,14 +77,24 @@
   overflow-y: auto;
 }
 
+/* ── Projects marquee ────────────────────────────── */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .projects-rail {
   display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
   border-left: 1px solid #e5e5e5;
   border-top: 1px solid #e5e5e5;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
 }
 
 .dark .projects-rail {
@@ -92,9 +102,31 @@
   border-top-color: #333333;
 }
 
+/* Inner track that actually moves */
+.projects-track {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee-scroll 40s linear infinite !important;
+  will-change: transform;
+}
+
+/* Pause marquee on hover so the user can read */
+.projects-rail:hover .projects-track {
+  animation-play-state: paused !important;
+}
+
+/* Each card must have a fixed width and never shrink */
 .projects-rail .project-card {
-  flex: 0 0 min(85vw, 320px);
-  scroll-snap-align: start;
+  min-width: 340px;
+  max-width: 340px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .projects-rail .project-card {
+    min-width: 85vw;
+    max-width: 85vw;
+  }
 }
 
 .project-tags {
@@ -102,8 +134,19 @@
   opacity: 0.7;
 }
 
+/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
+  .projects-track {
+    animation: none !important;
+  }
   .projects-rail {
-    scroll-snap-type: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .projects-rail .project-card {
+    scroll-snap-align: start;
   }
 }
