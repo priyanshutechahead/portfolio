@@ -8,9 +8,12 @@ Single **landing page**: About, Toolkit, Projects, and Contact are stacked secti
 portfolio/
 ├── .cursorfile           # This file — project rules & layout
 ├── index.html            # Landing page: header + 4 sections + footer
-├── prd.md                # Product requirements document
+├── .gitignore            # files to ignore to upload in github
+├── README.md            # about the portfolio page
 ├── css/
 │   └── style.css         # Custom CSS (scrollbar, toolkit hovers, projects rail, form)
+├── images/
+│   └── #if i use images in portfolio
 └── js/
     ├── theme-init.js     # Sync in <head> — apply saved theme before paint
     ├── tailwind-config.js
