@@ -1,60 +1,49 @@
-# Portfolio — Project Context
+# .cursorrules for my portfolio
 
-Single **landing page**: About, Toolkit, Projects, and Contact are stacked sections on one scrollable `index.html`. Nav links smooth-scroll to `#about`, `#toolkit`, `#projects`, `#contact`.
+this is my corner of the internet. tt needs to feel clean, direct and brutalist.
+i choose depth over noise and clarity over cleverness. no backend drama here.
 
-## Directory structure
+## the vibe & vesign
+- **Monochrome**: black/white high contrast. if its black, hover makes it white.
+- **Typography**: inter (body), playfair/lora (headings), JetBrains Mono (details).
+- **Zero Fluff**: no useless animations or percentage skill bars. Just honesty.
 
+## The "No Drama" Stack
+- **Vanilla First**: No React, no npm, no build steps. Just native browser power.
+- **Tailwind CDN**: Utility-first styling. Config lives in `js/tailwind-config.js`.
+- **Custom CSS**: `css/style.css` handles scrollbars, hovers, and the projects rail.
+- **Web3Forms**: Simple POST in `js/contact.js`. Snappy feedback, 5s timeout.
+
+## Directory & Structure
 ```
 portfolio/
-├── .cursorfile           # This file — project rules & layout
-├── index.html            # Landing page: header + 4 sections + footer
-├── .gitignore            # files to ignore to upload in github
-├── README.md            # about the portfolio page
-├── css/
-│   └── style.css         # Custom CSS (scrollbar, toolkit hovers, projects rail, form)
-├── images/
-│   └── #if i use images in portfolio
+├── index.html            # The whole world lives here (semantic tags)
+├── css/style.css         # Brutalist soul (scrollbars, custom hovers)
 └── js/
-    ├── theme-init.js     # Sync in <head> — apply saved theme before paint
-    ├── tailwind-config.js
-    ├── navigation.js     # Smooth scroll, mobile menu, scroll-spy nav highlight
-    ├── theme.js          # Theme toggle button
-    └── contact.js        # Web3Forms contact submission
+    ├── theme-init.js     # Critical: Run in <head> to prevent theme flash
+    ├── theme.js          # Toggle logic & localStorage persistence
+    ├── navigation.js     # Smooth scroll, mobile menu, scroll-spy
+    ├── contact.js        # Form validation and Web3Forms submission
+    └── tailwind-config.js # Runtime Tailwind configuration
 ```
 
-## Sections (all visible)
+## strict rules to code by
+1. **IDs are Sacred**: Use `#about`, `#toolkit`, `#projects` and `#contact`.
+2. **mobile first**: if it breaks at 375px, its broken. Riya needs to scan fast.
+3. **the theme**: Always sync with `localStorage.theme`. No white flashes on reload.
+4. **section spacing**: Use `scroll-mt-32 lg:scroll-mt-40` for fixed header clearance.
+5. **native scrolling**: For projects, use `overflow-x-auto` + `scroll-snap-type`.
+6. **inversion**: Use `bg-black text-white hover:bg-white hover:text-black` patterns.
+7. **accessibility**: ARIA labels for the menu and descriptive alt text for SVGs.
 
+## implementation Details
+- **Toolkit**: 8-tool grid with parent-hover SVG color changes.
+- **Manifesto**: 01-04 cards (Depth, Clarity, Simplicity, Solitude) are sacred.
+- **Currently**: Updated monthly. Keep this block alive and text-based.
+- **Contact**: Use a honeypot field. Reset form immediately on success.
 
-| Section  | ID        | Anchor     |
-|----------|-----------|------------|
-| About    | `#about`  | Top hero   |
-| Toolkit  | `#toolkit`| After About|
-| Project  | `#project`| after toolkit and before contact|
-| Contact  | `#contact`| Before footer |
-
-Use `scroll-mt-32 lg:scroll-mt-40` on sections so content clears the fixed header.
-
-## Projects section
-
-- Horizontal rail: `.projects-rail` with toolkit-style `.project-card` articles
-- Scroll: native `overflow-x-auto` + scroll-snap (no JS carousel in v1)
-- Cards: display-only (title, description, tech tags); no links unless added later
-
-## Conventions
-
-- **Tailwind**: CDN with `forms`, `container-queries`, `typography`. Config in `js/tailwind-config.js`. Base `@layer` rules stay in `index.html` as `<style type="text/tailwindcss">`.
-- **No inline scripts** in `index.html` except AdSense if required — use `js/*.js`.
-- **Paths**: Always relative to `portfolio/` (`css/`, `js/`).
-- **Theme**: `localStorage.theme` = `light` | `dark`. Init in `theme-init.js`, toggle in `theme.js`.
-- **Do not** hide sections with JS — this is one page, not tab routing.
-
-## Adding a new section
-
-1. Add `<section id="{name}" class="scroll-mt-32 lg:scroll-mt-40 ...">` in `index.html`.
-2. Register `{name}` in `SECTIONS` in `js/navigation.js`.
-3. Add `href="#{name}" data-nav="{name}"` in header (desktop + mobile).
-
-## External dependencies
-
-- Tailwind CDN, Google Fonts (Inter, Lora, Playfair Display, JetBrains Mono), Material Symbols
-- Web3Forms API (`contact.js`)
+## The Human Check
+Ask yourself: "Does this add drama or does it just work?" We want the latter.
+One page, one scroll, no hidden logic. If it doesn't need JS, don't use it.
+Keep the editorial feel. Every pixel should help a recruiter decide in 2 mins.
+This is about shipping something real, not just following a tutorial.
