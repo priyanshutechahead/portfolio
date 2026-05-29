@@ -37,13 +37,13 @@ portfolio/
 7. **accessibility**: ARIA labels for the menu and descriptive alt text for SVGs.
 
 ## implementation Details
-- **Toolkit**: 8-tool grid with parent-hover SVG color changes.
-- **Manifesto**: 01-04 cards (Depth, Clarity, Simplicity, Solitude) are sacred.
-- **Currently**: Updated monthly. Keep this block alive and text-based.
-- **Contact**: Use a honeypot field. Reset form immediately on success.
+- **toolkit**: 8-tool grid with parent-hover SVG color changes.
+- **manifesto**: 01-04 cards (Depth, Clarity, Simplicity, Solitude) are sacred.
+- **currently**: updated monthly. Keep this block alive and text-based.
+- **contact**: use a honeypot field. reset form immediately on success.
 
-## The Human Check
-Ask yourself: "Does this add drama or does it just work?" We want the latter.
-One page, one scroll, no hidden logic. If it doesn't need JS, don't use it.
-Keep the editorial feel. Every pixel should help a recruiter decide in 2 mins.
-This is about shipping something real, not just following a tutorial.
+## the human check
+ask yourself: "does this add drama or does it just work?" we want the latter.
+one page, one scroll, no hidden logic. If it doesn't need JS, don't use it.
+keep the editorial feel. every pixel should help a recruiter decide in 2 mins.
+this is about shipping something real, not just following a tutorial.
